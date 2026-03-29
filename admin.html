@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grip&Rip Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        :root { --primary: #1e293b; --secondary: #10b981; --bg: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); padding: 20px; color: var(--primary); }
+        .admin-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        input, select, button { padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; width: 100%; box-sizing: border-box; }
+        .btn { cursor: pointer; font-weight: bold; border: none; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn:hover { opacity: 0.9; }
+        .btn-save { background: var(--secondary); color: white; }
+        .btn-import { background: #f59e0b; color: white; }
+        .btn-archive { background: #6366f1; color: white; }
+        .btn-danger { background: #ef4444; color: white; }
+        .btn-move { background: #64748b; color: white; padding: 5px; font-size: 12px; height: 30px; width: 30px; }
+        .btn-sort { background: #334155; color: white; width: auto; padding: 8px 15px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { text-align: left; font-size: 11px; color: #64748b; padding: 8px; border-bottom: 2px solid #f1f5f9; text-transform: uppercase; }
+        td { padding: 8px; border-bottom: 1px solid #f1f5f9; }
+        .division-header { background: #334155; color: white; padding: 12px; border-radius: 6px; margin-top: 20px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .action-cell { display: flex; gap: 4px; justify-content: center; }
+        #fileInput { display: none; }
+        /* Highlight focused cell for better visibility */
+        input:focus { outline: 2px solid var(--secondary); background: #f0fdf4; }
+    </style>
+</head>
+<body>
+
+    <h1>Grip&Rip Admin</h1>
+
+    <div class="admin-card">
+        <h3>Current Event</h3>
+        <div class="grid">
+            <div><label>Venue</label><input type="text" id="venueName"></div>
+            <div style="grid-column: span 2;"><label>Event Dates</label><input type="text" id="dateRange" placeholder="Select Date Range.."></div>
+            <div><label>Season</label><input type="number" id="seasonNum"></div>
+            <div><label>Week</label><input type="number" id="weekNum"></div>
+        </div>
+        <div style="display:flex; gap:15px;">
+            <label><input type="checkbox" id="isSig" style="width:auto;"> Major 2x Pts</label>
+            <label><input type="checkbox" id="doubleBonus" style="width:auto;"> Bonus 2x</label>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <h3>Quick Add Player</h3>
+        <div class="grid">
+            <input type="text" id="newName" placeholder="Name">
+            <select id="newConsole"><option value="PS">PS</option><option value="Xbox">Xbox</option><option value="PC">PC</option></select>
+            <select id="newDiv"><option value="1">Div 1</option><option value="2">Div 2</option><option value="3">Div 3</option><option value="0">Inactive</option></select>
+            <button class="btn btn-save" onclick="addPlayer()"><i class="fa-solid fa-plus"></i> Add</button>
+        </div>
+    </div>
+
+    <div id="division-container"></div>
+
+    <div class="admin-card">
+        <h3>Data Management</h3>
+        <div class="grid">
+            <input type="file" id="fileInput" accept=".json" onchange="importJSON(event)">
+            <button class="btn btn-import" onclick="document.getElementById('fileInput').click()"><i class="fa-solid fa-file-import"></i> 1. Import data.json</button>
+            <button class="btn btn-archive" onclick="exportArchive()"><i class="fa-solid fa-box-archive"></i> 2. Finalize Week</button>
+            <button class="btn btn-save" onclick="exportJSON()"><i class="fa-solid fa-download"></i> 3. Download data.json</button>
+            <button class="btn btn-danger" onclick="clearScores()"><i class="fa-solid fa-eraser"></i> 4. Reset Weekly Scores</button>
+        </div>
+        <button class="btn btn-danger" onclick="clearSeasonStandings()"><i class="fa-solid fa-broom"></i> Reset Season Standings</button>
+    </div>
+
+    <template id="div-template">
+        <div class="division-header">
+            <span class="header-text">Division X</span>
+            <button class="btn btn-sort" onclick="sortDivision(this)"><i class="fa-solid fa-arrow-down-9-1"></i> Sort Scores</button>
+        </div>
+        <div class="admin-card">
+            <table class="div-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th style="width:80px;">To Par</th>
+                        <th style="width:70px;">Putt</th>
+                        <th style="width:70px;">Shot</th>
+                        <th style="width:70px;">Ace</th>
+                        <th style="width:70px;">Alby</th>
+                        <th style="width:120px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+    let leagueData = JSON.parse(localStorage.getItem('golfAdminData')) || {
+        venue: "", date: "", seasonNum: 1, weekNum: 1, isSig: false, doubleBonus: false,
+        players: [], season: {}, historyHtml: ""
+    };
+
+    let fp;
+
+    function init() {
+        document.getElementById('venueName').value = leagueData.venue || "";
+        document.getElementById('seasonNum').value = leagueData.seasonNum || 1;
+        document.getElementById('weekNum').value = leagueData.weekNum || 1;
+        document.getElementById('isSig').checked = leagueData.isSig || false;
+        document.getElementById('doubleBonus').checked = leagueData.doubleBonus || false;
+        
+        fp = flatpickr("#dateRange", {
+            mode: "range",
+            dateFormat: "Y-m-d",
+            defaultDate: leagueData.date ? leagueData.date.split(" to ") : []
+        });
+
+        renderTables();
+        setupNavigation();
+    }
+
+    // ARROW KEY NAVIGATION LOGIC
+    function setupNavigation() {
+        document.addEventListener('keydown', function(e) {
+            const active = document.activeElement;
+            if (active.tagName !== 'INPUT' || !active.closest('.div-table')) return;
+
+            const row = active.closest('tr');
+            const cell = active.closest('td');
+            const colIndex = cell.cellIndex;
+            const table = active.closest('.div-table');
+
+            switch(e.key) {
+                case "ArrowUp":
+                    e.preventDefault();
+                    const prevRow = row.previousElementSibling;
+                    if (prevRow) prevRow.cells[colIndex].querySelector('input').focus();
+                    break;
+                case "ArrowDown":
+                case "Enter":
+                    e.preventDefault();
+                    const nextRow = row.nextElementSibling;
+                    if (nextRow) nextRow.cells[colIndex].querySelector('input').focus();
+                    break;
+                case "ArrowLeft":
+                    // Only move if cursor is at start of input
+                    if (active.selectionStart === 0) {
+                        e.preventDefault();
+                        const prevCell = cell.previousElementSibling;
+                        if (prevCell && prevCell.querySelector('input')) {
+                            prevCell.querySelector('input').focus();
+                        }
+                    }
+                    break;
+                case "ArrowRight":
+                    // Only move if cursor is at end of input
+                    if (active.selectionEnd === active.value.length) {
+                        e.preventDefault();
+                        const nextCell = cell.nextElementSibling;
+                        if (nextCell && nextCell.querySelector('input')) {
+                            nextCell.querySelector('input').focus();
+                        }
+                    }
+                    break;
+            }
+        });
+    }
+
+    function formatExportDate(dateStr) {
+        if (!dateStr || !dateStr.includes(" to ")) return dateStr;
+        const parts = dateStr.split(" to ");
+        const d1 = new Date(parts[0]);
+        const d2 = new Date(parts[1]);
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        
+        const day1 = d1.getDate();
+        const month1 = months[d1.getMonth()];
+        const year1 = d1.getFullYear();
+
+        const day2 = d2.getDate();
+        const month2 = months[d2.getMonth()];
+        const year2 = d2.getFullYear();
+
+        if (month1 === month2 && year1 === year2) {
+            return `${day1}-${day2} ${month2} ${year2}`;
+        } else if (year1 === year2) {
+            return `${day1} ${month1} - ${day2} ${month2} ${year2}`;
+        } else {
+            return `${day1} ${month1} ${year1} - ${day2} ${month2} ${year2}`;
+        }
+    }
+
+    function renderTables() {
+        const container = document.getElementById('division-container');
+        container.innerHTML = '';
+        [1, 2, 3, 0].forEach(divNum => {
+            const temp = document.getElementById('div-template').content.cloneNode(true);
+            temp.querySelector('.header-text').innerText = divNum === 0 ? "Inactive" : "Division " + divNum;
+            temp.querySelector('.btn-sort').setAttribute('data-div', divNum);
+            const tbody = temp.querySelector('tbody');
+            
+            const players = leagueData.players.filter(p => p.division == divNum).sort((a,b) => parseScore(a.toPar) - parseScore(b.toPar));
+
+            let lastScore = null;
+            let tiedRank = 0;
+
+            players.forEach((p, idx) => {
+                const currentScore = parseScore(p.toPar);
+                if (currentScore !== lastScore) { tiedRank = idx; }
+                lastScore = currentScore;
+                
+                const tieCount = players.filter(pl => parseScore(pl.toPar) === currentScore && currentScore !== 999).length;
+                const displayRank = (tieCount > 1 && divNum !== 0) ? "T" + (tiedRank + 1) : (idx + 1);
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><small style="color:#94a3b8">${displayRank}.</small> <strong>${p.name}</strong></td>
+                    <td><input type="text" value="${p.toPar||''}" onchange="updatePlayerData('${p.name}','toPar',this.value)"></td>
+                    <td><input type="number" value="${p.putt||''}" onchange="updatePlayerData('${p.name}','putt',this.value)"></td>
+                    <td><input type="number" value="${p.shot||''}" onchange="updatePlayerData('${p.name}','shot',this.value)"></td>
+                    <td><input type="text" value="${p.ace||''}" onchange="updatePlayerData('${p.name}','ace',this.value)"></td>
+                    <td><input type="text" value="${p.alby||''}" onchange="updatePlayerData('${p.name}','alby',this.value)"></td>
+                    <td class="action-cell">
+                        <button class="btn btn-move" onclick="movePlayer('${p.name}',-1)"><i class="fa-solid fa-angle-up"></i></button>
+                        <button class="btn btn-move" onclick="movePlayer('${p.name}',1)"><i class="fa-solid fa-angle-down"></i></button>
+                        <button class="btn btn-danger" style="width:30px; height:30px; padding:0;" onclick="removePlayer('${p.name}')"><i class="fa-solid fa-xmark"></i></button>
+                    </td>`;
+                tbody.appendChild(row);
+            });
+            container.appendChild(temp);
+        });
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+    }
+
+    function exportArchive() {
+        const vn = document.getElementById('venueName').value;
+        const sn = document.getElementById('seasonNum').value;
+        const wn = document.getElementById('weekNum').value;
+        const dr = formatExportDate(document.getElementById('dateRange').value); 
+        if(!vn) return alert("Enter a Venue Name first!");
+
+        let html = `<div class="history-item"><strong>S${sn} W${wn}: ${vn} (${dr})</strong><table>`;
+        [1,2,3].forEach(dv => {
+            const players = leagueData.players.filter(p => p.division == dv).sort((a,b) => parseScore(a.toPar) - parseScore(b.toPar));
+            if(players.length > 0) {
+                html += `<tr><th colspan="3">Division ${dv}</th></tr>`;
+                let lastScore = null;
+                let tiedRank = 0;
+
+                players.forEach((p, idx) => {
+                    const currentScore = parseScore(p.toPar);
+                    if (currentScore !== lastScore) { tiedRank = idx; }
+                    lastScore = currentScore;
+                    
+                    const tieCount = players.filter(pl => parseScore(pl.toPar) === currentScore).length;
+                    const displayRank = (tieCount > 1) ? "T" + (tiedRank + 1) : (idx + 1);
+                    const pts = (p.toPar!==""||p.putt!=="") ? calculatePoints(p, tiedRank) : 0;
+                    
+                    html += `<tr><td>${displayRank}. ${p.name}</td><td>${p.toPar||'DNP'}</td><td>${pts}</td></tr>`;
+                    
+                    if(p.toPar !== "") {
+                        leagueData.season[p.name] = leagueData.season[p.name] || {points:0, eventsPlayed:0, wins:0};
+                        leagueData.season[p.name].points += pts;
+                        leagueData.season[p.name].eventsPlayed++;
+                        if(tiedRank === 0) leagueData.season[p.name].wins++;
+                    }
+                });
+            }
+        });
+        html += `</table></div>`;
+        leagueData.historyHtml = html + (leagueData.historyHtml || "");
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+        alert("History Archived with smart date formatting.");
+        renderTables();
+    }
+
+    function clearScores() {
+        if(confirm("Wipe weekly scores? Only do this AFTER downloading data.json.")) {
+            leagueData.players.forEach(p => { p.toPar=""; p.putt=""; p.shot=""; p.ace=""; p.alby=""; });
+            renderTables();
+        }
+    }
+
+    function parseScore(v) { return (!v||v==="")?999:(v==='E'||v==='0')?0:parseInt(v); }
+    
+    function calculatePoints(p, rank) {
+        let base = {0:100, 1:90, 2:80, 3:70, 4:60, 5:50}[rank] || 0;
+        let bM = document.getElementById('doubleBonus').checked ? 2 : 1;
+        let bonus = 0;
+        if(parseInt(p.putt)>0) bonus += (25*bM); if(parseInt(p.shot)>0) bonus += (25*bM);
+        if(p.ace && p.ace.trim()!=="") bonus += (50*bM); if(p.alby && p.alby.trim()!=="") bonus += (50*bM);
+        return document.getElementById('isSig').checked ? (base+bonus)*2 : (base+bonus);
+    }
+
+    function importJSON(e) {
+        const file = e.target.files[0];
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            leagueData = JSON.parse(ev.target.result);
+            localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+            init();
+        };
+        reader.readAsText(file);
+    }
+
+    function movePlayer(name, dir) {
+        const p = leagueData.players.find(x => x.name === name);
+        if(!p) return;
+        let cur = p.division === 0 ? 4 : p.division;
+        let nxt = Math.max(1, Math.min(4, cur + dir));
+        p.division = nxt === 4 ? 0 : nxt;
+        renderTables();
+    }
+
+    function sortDivision(btn) {
+        const dv = parseInt(btn.getAttribute('data-div'));
+        leagueData.players.sort((a,b) => {
+            if(a.division !== b.division) return 0;
+            return a.division === dv ? parseScore(a.toPar) - parseScore(b.toPar) : 0;
+        });
+        renderTables();
+    }
+
+    function addPlayer() {
+        const n = document.getElementById('newName').value.trim();
+        if(!n) return;
+        leagueData.players.push({name:n, console:document.getElementById('newConsole').value, division:parseInt(document.getElementById('newDiv').value), toPar:"", putt:"", shot:"", ace:"", alby:""});
+        document.getElementById('newName').value = "";
+        renderTables();
+    }
+
+    function updatePlayerData(n,f,v) { const p = leagueData.players.find(x=>x.name===n); if(p) p[f]=v; localStorage.setItem('golfAdminData', JSON.stringify(leagueData)); renderTables(); }
+    function removePlayer(n) { if(confirm("Delete "+n+"?")) { leagueData.players=leagueData.players.filter(p=>p.name!==n); renderTables(); } }
+    function clearSeasonStandings() { if(confirm("Wipe points?")) { leagueData.season={}; localStorage.setItem('golfAdminData', JSON.stringify(leagueData)); location.reload(); } }
+    
+    function exportJSON() {
+        leagueData.venue = document.getElementById('venueName').value;
+        leagueData.date = formatExportDate(document.getElementById('dateRange').value); 
+        leagueData.seasonNum = parseInt(document.getElementById('seasonNum').value);
+        leagueData.weekNum = parseInt(document.getElementById('weekNum').value);
+        leagueData.isSig = document.getElementById('isSig').checked;
+        leagueData.doubleBonus = document.getElementById('doubleBonus').checked;
+        const blob = new Blob([JSON.stringify(leagueData, null, 2)], {type:"application/json"});
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = "data.json"; a.click();
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>
