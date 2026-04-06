@@ -3,14 +3,14 @@
   "date": "2026-01-01",
   "seasonNum": 6,
   "weekNum": 5,
-  "isSig": false,
-  "doubleBonus": true,
+  "isSig": true,
+  "doubleBonus": false,
   "players": [
     {
       "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
-      "toPar": "",
+      "toPar": "-2",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -50,10 +50,10 @@
       "name": "Geordieboy85",
       "console": "PS",
       "division": 1,
-      "toPar": "",
-      "putt": "",
+      "toPar": "-4",
+      "putt": "12",
       "shot": "",
-      "ace": "",
+      "ace": "34",
       "alby": ""
     },
     {
