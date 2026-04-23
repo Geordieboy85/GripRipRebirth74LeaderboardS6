@@ -1,8 +1,8 @@
 {
-  "venue": "A Censored Golf Club",
-  "date": "2026-04-09 to 2026-04-15",
+  "venue": "Breakneck Beach Golf Club",
+  "date": "2026-04-16 to 2026-04-22",
   "seasonNum": 6,
-  "weekNum": 1,
+  "weekNum": 2,
   "isSig": false,
   "doubleBonus": false,
   "players": [
@@ -10,7 +10,7 @@
       "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
-      "toPar": "+1",
+      "toPar": "-6",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -20,7 +20,7 @@
       "name": "Keep_of_Kalessin",
       "console": "PS",
       "division": 2,
-      "toPar": "+6",
+      "toPar": "-2",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -30,9 +30,9 @@
       "name": "Mr Longpole",
       "console": "Xbox",
       "division": 1,
-      "toPar": "+3",
+      "toPar": "-3",
       "putt": "",
-      "shot": "5",
+      "shot": "20.4",
       "ace": "",
       "alby": ""
     },
@@ -40,8 +40,8 @@
       "name": "Tenbobnote",
       "console": "PS",
       "division": 1,
-      "toPar": "+8",
-      "putt": "55.6",
+      "toPar": "-3",
+      "putt": "37.1",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -50,7 +50,7 @@
       "name": "Geordieboy85",
       "console": "PS",
       "division": 1,
-      "toPar": "+17",
+      "toPar": "-1",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -60,9 +60,9 @@
       "name": "Hoplinkz",
       "console": "PS",
       "division": 2,
-      "toPar": "",
+      "toPar": "+3",
       "putt": "",
-      "shot": "",
+      "shot": "133.7",
       "ace": "",
       "alby": ""
     },
@@ -70,8 +70,8 @@
       "name": "Polekatt",
       "console": "PC",
       "division": 2,
-      "toPar": "+28",
-      "putt": "23.3",
+      "toPar": "+18",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -80,7 +80,7 @@
       "name": "Horusphoenix",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-1",
+      "toPar": "-8",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -90,7 +90,7 @@
       "name": "IceCream",
       "console": "PC",
       "division": 2,
-      "toPar": "+35",
+      "toPar": "",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -100,8 +100,8 @@
       "name": "Hammers1man",
       "console": "PC",
       "division": 3,
-      "toPar": "+12",
-      "putt": "34.1",
+      "toPar": "+2",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -110,7 +110,7 @@
       "name": "Er114ic",
       "console": "PS",
       "division": 2,
-      "toPar": "+1",
+      "toPar": "+10",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -120,9 +120,9 @@
       "name": "X3offtheTee",
       "console": "Xbox",
       "division": 2,
-      "toPar": "+5",
-      "putt": "",
-      "shot": "44",
+      "toPar": "-1",
+      "putt": "26.6",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -130,7 +130,7 @@
       "name": "NoWorries",
       "console": "Xbox",
       "division": 1,
-      "toPar": "+33",
+      "toPar": "+15",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -140,9 +140,9 @@
       "name": "Rendallio",
       "console": "PS",
       "division": 3,
-      "toPar": "+2",
+      "toPar": "-8",
       "putt": "",
-      "shot": "15.3",
+      "shot": "7",
       "ace": "",
       "alby": ""
     },
@@ -150,8 +150,18 @@
       "name": "BIGavoLEO",
       "console": "Xbox",
       "division": 3,
-      "toPar": "+76",
+      "toPar": "+20",
       "putt": "",
+      "shot": "",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Chris74Jones",
+      "console": "PS",
+      "division": 3,
+      "toPar": "+3",
+      "putt": "20.1",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -159,64 +169,64 @@
   ],
   "season": {
     "Horusphoenix": {
-      "points": 100,
-      "eventsPlayed": 1,
-      "wins": 1,
-      "acc": -1
+      "points": 200,
+      "eventsPlayed": 2,
+      "wins": 2,
+      "acc": -9
     },
     "Colly45x": {
-      "points": 90,
-      "eventsPlayed": 1,
+      "points": 180,
+      "eventsPlayed": 2,
       "wins": 0,
-      "acc": "+1"
+      "acc": -5
     },
     "Mr Longpole": {
-      "points": 105,
-      "eventsPlayed": 1,
+      "points": 210,
+      "eventsPlayed": 2,
       "wins": 0,
-      "acc": "+3"
+      "acc": "E"
     },
     "Tenbobnote": {
-      "points": 95,
-      "eventsPlayed": 1,
-      "wins": 0,
-      "acc": "+8"
-    },
-    "Geordieboy85": {
-      "points": 60,
-      "eventsPlayed": 1,
-      "wins": 0,
-      "acc": "+17"
-    },
-    "NoWorries": {
-      "points": 50,
-      "eventsPlayed": 1,
-      "wins": 0,
-      "acc": "+33"
-    },
-    "Er114ic": {
-      "points": 100,
-      "eventsPlayed": 1,
-      "wins": 1,
-      "acc": "+1"
-    },
-    "X3offtheTee": {
-      "points": 115,
-      "eventsPlayed": 1,
+      "points": 200,
+      "eventsPlayed": 2,
       "wins": 0,
       "acc": "+5"
     },
-    "Keep_of_Kalessin": {
-      "points": 80,
-      "eventsPlayed": 1,
+    "Geordieboy85": {
+      "points": 120,
+      "eventsPlayed": 2,
       "wins": 0,
-      "acc": "+6"
+      "acc": "+16"
+    },
+    "NoWorries": {
+      "points": 100,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "acc": "+48"
+    },
+    "Er114ic": {
+      "points": 170,
+      "eventsPlayed": 2,
+      "wins": 1,
+      "acc": "+11"
+    },
+    "X3offtheTee": {
+      "points": 230,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "acc": "+4"
+    },
+    "Keep_of_Kalessin": {
+      "points": 180,
+      "eventsPlayed": 2,
+      "wins": 1,
+      "acc": "+4"
     },
     "Polekatt": {
-      "points": 95,
-      "eventsPlayed": 1,
+      "points": 155,
+      "eventsPlayed": 2,
       "wins": 0,
-      "acc": "+28"
+      "acc": "+46"
     },
     "IceCream": {
       "points": 60,
@@ -225,24 +235,36 @@
       "acc": "+35"
     },
     "Rendallio": {
-      "points": 125,
-      "eventsPlayed": 1,
-      "wins": 1,
-      "acc": "+2"
+      "points": 250,
+      "eventsPlayed": 2,
+      "wins": 2,
+      "acc": -6
     },
     "Hammers1man": {
-      "points": 115,
-      "eventsPlayed": 1,
+      "points": 205,
+      "eventsPlayed": 2,
       "wins": 0,
-      "acc": "+12"
+      "acc": "+14"
     },
     "BIGavoLEO": {
-      "points": 80,
+      "points": 150,
+      "eventsPlayed": 2,
+      "wins": 0,
+      "acc": "+96"
+    },
+    "Hoplinkz": {
+      "points": 105,
       "eventsPlayed": 1,
       "wins": 0,
-      "acc": "+76"
+      "acc": "+3"
+    },
+    "Chris74Jones": {
+      "points": 105,
+      "eventsPlayed": 1,
+      "wins": 0,
+      "acc": "+3"
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S6 W1: A Censored Golf Club (9 Apr - 15 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-1</td><td>100</td></tr><tr><td>Colly45x</td><td>+1</td><td>90</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>+8</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+17</td><td>60</td></tr><tr><td>NoWorries</td><td>+33</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>+1</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+5</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+6</td><td>80</td></tr><tr><td>Polekatt</td><td>+28</td><td>95</td></tr><tr><td>IceCream</td><td>+35</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>+2</td><td>125</td></tr><tr><td>Hammers1man</td><td>+12</td><td>115</td></tr><tr><td>BIGavoLEO</td><td>+76</td><td>80</td></tr></table></div>",
-  "lastFinalizedWeek": 1
+  "historyHtml": "<div class=\"history-item\"><strong>S6 W2: Breakneck Beach Golf Club (16 Apr - 22 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-8</td><td>100</td></tr><tr><td>Colly45x</td><td>-6</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>-3</td><td>105</td></tr><tr><td>Geordieboy85</td><td>-1</td><td>60</td></tr><tr><td>NoWorries</td><td>+15</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-2</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-1</td><td>115</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>105</td></tr><tr><td>Er114ic</td><td>+10</td><td>70</td></tr><tr><td>Polekatt</td><td>+18</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>-8</td><td>125</td></tr><tr><td>Hammers1man</td><td>+2</td><td>90</td></tr><tr><td>Chris74Jones</td><td>+3</td><td>105</td></tr><tr><td>BIGavoLEO</td><td>+20</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S6 W1: A Censored Golf Club (9 Apr - 15 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-1</td><td>100</td></tr><tr><td>Colly45x</td><td>+1</td><td>90</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>+8</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+17</td><td>60</td></tr><tr><td>NoWorries</td><td>+33</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>+1</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+5</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+6</td><td>80</td></tr><tr><td>Polekatt</td><td>+28</td><td>95</td></tr><tr><td>IceCream</td><td>+35</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>+2</td><td>125</td></tr><tr><td>Hammers1man</td><td>+12</td><td>115</td></tr><tr><td>BIGavoLEO</td><td>+76</td><td>80</td></tr></table></div>",
+  "lastFinalizedWeek": 2
 }
