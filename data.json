@@ -1,8 +1,8 @@
 {
-  "venue": "Chesterland Trout Club",
-  "date": "2026-04-23 to 2026-04-29",
+  "venue": "California GC Cal Club",
+  "date": "2026-04-30 to 2026-05-06",
   "seasonNum": 6,
-  "weekNum": 3,
+  "weekNum": 4,
   "isSig": false,
   "doubleBonus": false,
   "players": [
@@ -10,9 +10,9 @@
       "name": "Colly45x",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-8",
-      "putt": "",
-      "shot": "9.1",
+      "toPar": "-11",
+      "putt": "55.1",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -20,8 +20,8 @@
       "name": "Keep_of_Kalessin",
       "console": "PS",
       "division": 2,
-      "toPar": "+10",
-      "putt": "",
+      "toPar": "-2",
+      "putt": "29.5",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -30,14 +30,24 @@
       "name": "Mr Longpole",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-4",
-      "putt": "31.3",
+      "toPar": "-10",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
     },
     {
       "name": "Tenbobnote",
+      "console": "PS",
+      "division": 1,
+      "toPar": "-5",
+      "putt": "",
+      "shot": "35.5",
+      "ace": "",
+      "alby": ""
+    },
+    {
+      "name": "Geordieboy85",
       "console": "PS",
       "division": 1,
       "toPar": "+1",
@@ -47,22 +57,12 @@
       "alby": ""
     },
     {
-      "name": "Geordieboy85",
-      "console": "PS",
-      "division": 1,
-      "toPar": "+4",
-      "putt": "",
-      "shot": "",
-      "ace": "",
-      "alby": ""
-    },
-    {
       "name": "Hoplinkz",
       "console": "PS",
       "division": 2,
-      "toPar": "",
+      "toPar": "-5",
       "putt": "",
-      "shot": "",
+      "shot": "13.5",
       "ace": "",
       "alby": ""
     },
@@ -80,7 +80,7 @@
       "name": "Horusphoenix",
       "console": "Xbox",
       "division": 1,
-      "toPar": "E",
+      "toPar": "-9",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -90,9 +90,9 @@
       "name": "IceCream",
       "console": "PC",
       "division": 2,
-      "toPar": "+19",
+      "toPar": "+12",
       "putt": "",
-      "shot": "20.1",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -100,9 +100,9 @@
       "name": "Hammers1man",
       "console": "PC",
       "division": 3,
-      "toPar": "+7",
+      "toPar": "-1",
       "putt": "",
-      "shot": "6.5",
+      "shot": "6.8",
       "ace": "",
       "alby": ""
     },
@@ -120,8 +120,8 @@
       "name": "X3offtheTee",
       "console": "Xbox",
       "division": 2,
-      "toPar": "+4",
-      "putt": "21.5",
+      "toPar": "-7",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -130,7 +130,7 @@
       "name": "NoWorries",
       "console": "Xbox",
       "division": 1,
-      "toPar": "+24",
+      "toPar": "+10",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -140,7 +140,7 @@
       "name": "Rendallio",
       "console": "PS",
       "division": 3,
-      "toPar": "-3",
+      "toPar": "-15",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -150,8 +150,8 @@
       "name": "BIGavoLEO",
       "console": "Xbox",
       "division": 3,
-      "toPar": "+43",
-      "putt": "",
+      "toPar": "+17",
+      "putt": "30.1",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -170,8 +170,8 @@
       "name": "Huckleberry",
       "console": "Xbox",
       "division": 3,
-      "toPar": "+9",
-      "putt": "22.1",
+      "toPar": "",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -179,58 +179,58 @@
   ],
   "season": {
     "Horusphoenix": {
-      "points": 280,
-      "eventsPlayed": 3,
+      "points": 360,
+      "eventsPlayed": 4,
       "wins": 2,
-      "acc": -9
+      "acc": -18
     },
     "Colly45x": {
-      "points": 305,
-      "eventsPlayed": 3,
-      "wins": 1,
-      "acc": -13
+      "points": 430,
+      "eventsPlayed": 4,
+      "wins": 2,
+      "acc": -24
     },
     "Mr Longpole": {
-      "points": 325,
-      "eventsPlayed": 3,
+      "points": 415,
+      "eventsPlayed": 4,
       "wins": 0,
-      "acc": -4
+      "acc": -14
     },
     "Tenbobnote": {
-      "points": 270,
-      "eventsPlayed": 3,
+      "points": 365,
+      "eventsPlayed": 4,
       "wins": 0,
-      "acc": "+6"
+      "acc": "+1"
     },
     "Geordieboy85": {
-      "points": 180,
-      "eventsPlayed": 3,
+      "points": 240,
+      "eventsPlayed": 4,
       "wins": 0,
-      "acc": "+20"
+      "acc": "+21"
     },
     "NoWorries": {
-      "points": 150,
-      "eventsPlayed": 3,
+      "points": 200,
+      "eventsPlayed": 4,
       "wins": 0,
-      "acc": "+72"
+      "acc": "+82"
     },
     "Er114ic": {
-      "points": 270,
-      "eventsPlayed": 3,
+      "points": 350,
+      "eventsPlayed": 4,
       "wins": 2,
-      "acc": "+7"
+      "acc": "+3"
     },
     "X3offtheTee": {
-      "points": 345,
-      "eventsPlayed": 3,
-      "wins": 0,
-      "acc": "+8"
+      "points": 445,
+      "eventsPlayed": 4,
+      "wins": 1,
+      "acc": "+1"
     },
     "Keep_of_Kalessin": {
-      "points": 260,
-      "eventsPlayed": 3,
+      "points": 355,
+      "eventsPlayed": 4,
       "wins": 1,
-      "acc": "+14"
+      "acc": "+12"
     },
     "Polekatt": {
       "points": 155,
@@ -239,34 +239,34 @@
       "acc": "+46"
     },
     "IceCream": {
-      "points": 155,
-      "eventsPlayed": 2,
+      "points": 215,
+      "eventsPlayed": 3,
       "wins": 0,
-      "acc": "+54"
+      "acc": "+66"
     },
     "Rendallio": {
-      "points": 350,
-      "eventsPlayed": 3,
-      "wins": 3,
-      "acc": -9
+      "points": 450,
+      "eventsPlayed": 4,
+      "wins": 4,
+      "acc": -24
     },
     "Hammers1man": {
-      "points": 320,
-      "eventsPlayed": 3,
+      "points": 435,
+      "eventsPlayed": 4,
       "wins": 0,
-      "acc": "+21"
+      "acc": "+20"
     },
     "BIGavoLEO": {
-      "points": 220,
-      "eventsPlayed": 3,
+      "points": 325,
+      "eventsPlayed": 4,
       "wins": 0,
-      "acc": "+139"
+      "acc": "+156"
     },
     "Hoplinkz": {
-      "points": 105,
-      "eventsPlayed": 1,
+      "points": 220,
+      "eventsPlayed": 2,
       "wins": 0,
-      "acc": "+3"
+      "acc": -2
     },
     "Chris74Jones": {
       "points": 105,
@@ -281,6 +281,6 @@
       "acc": "+9"
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S6 W3: Chesterland Trout Club (23 Apr - 29 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-8</td><td>125</td></tr><tr><td>Mr Longpole</td><td>-4</td><td>115</td></tr><tr><td>Horusphoenix</td><td>E</td><td>80</td></tr><tr><td>Tenbobnote</td><td>+1</td><td>70</td></tr><tr><td>Geordieboy85</td><td>+4</td><td>60</td></tr><tr><td>NoWorries</td><td>+24</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>-4</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+4</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+10</td><td>80</td></tr><tr><td>IceCream</td><td>+19</td><td>95</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>-3</td><td>100</td></tr><tr><td>Hammers1man</td><td>+7</td><td>115</td></tr><tr><td>Huckleberry</td><td>+9</td><td>105</td></tr><tr><td>BIGavoLEO</td><td>+43</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S6 W2: Breakneck Beach Golf Club (16 Apr - 22 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-8</td><td>100</td></tr><tr><td>Colly45x</td><td>-6</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>-3</td><td>105</td></tr><tr><td>Geordieboy85</td><td>-1</td><td>60</td></tr><tr><td>NoWorries</td><td>+15</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-2</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-1</td><td>115</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>105</td></tr><tr><td>Er114ic</td><td>+10</td><td>70</td></tr><tr><td>Polekatt</td><td>+18</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>-8</td><td>125</td></tr><tr><td>Hammers1man</td><td>+2</td><td>90</td></tr><tr><td>Chris74Jones</td><td>+3</td><td>105</td></tr><tr><td>BIGavoLEO</td><td>+20</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S6 W1: A Censored Golf Club (9 Apr - 15 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-1</td><td>100</td></tr><tr><td>Colly45x</td><td>+1</td><td>90</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>+8</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+17</td><td>60</td></tr><tr><td>NoWorries</td><td>+33</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>+1</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+5</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+6</td><td>80</td></tr><tr><td>Polekatt</td><td>+28</td><td>95</td></tr><tr><td>IceCream</td><td>+35</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>+2</td><td>125</td></tr><tr><td>Hammers1man</td><td>+12</td><td>115</td></tr><tr><td>BIGavoLEO</td><td>+76</td><td>80</td></tr></table></div>",
-  "lastFinalizedWeek": 3
+  "historyHtml": "<div class=\"history-item\"><strong>S6 W4: California GC Cal Club (30 Apr - 6 May 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-11</td><td>125</td></tr><tr><td>Mr Longpole</td><td>-10</td><td>90</td></tr><tr><td>Horusphoenix</td><td>-9</td><td>80</td></tr><tr><td>Tenbobnote</td><td>-5</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+1</td><td>60</td></tr><tr><td>NoWorries</td><td>+10</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>X3offtheTee</td><td>-7</td><td>100</td></tr><tr><td>Hoplinkz</td><td>-5</td><td>115</td></tr><tr><td>Er114ic</td><td>-4</td><td>80</td></tr><tr><td>Keep_of_Kalessin</td><td>-2</td><td>95</td></tr><tr><td>IceCream</td><td>+12</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>-15</td><td>100</td></tr><tr><td>Hammers1man</td><td>-1</td><td>115</td></tr><tr><td>BIGavoLEO</td><td>+17</td><td>105</td></tr></table></div><div class=\"history-item\"><strong>S6 W3: Chesterland Trout Club (23 Apr - 29 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Colly45x</td><td>-8</td><td>125</td></tr><tr><td>Mr Longpole</td><td>-4</td><td>115</td></tr><tr><td>Horusphoenix</td><td>E</td><td>80</td></tr><tr><td>Tenbobnote</td><td>+1</td><td>70</td></tr><tr><td>Geordieboy85</td><td>+4</td><td>60</td></tr><tr><td>NoWorries</td><td>+24</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>-4</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+4</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+10</td><td>80</td></tr><tr><td>IceCream</td><td>+19</td><td>95</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>-3</td><td>100</td></tr><tr><td>Hammers1man</td><td>+7</td><td>115</td></tr><tr><td>Huckleberry</td><td>+9</td><td>105</td></tr><tr><td>BIGavoLEO</td><td>+43</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S6 W2: Breakneck Beach Golf Club (16 Apr - 22 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-8</td><td>100</td></tr><tr><td>Colly45x</td><td>-6</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>-3</td><td>105</td></tr><tr><td>Geordieboy85</td><td>-1</td><td>60</td></tr><tr><td>NoWorries</td><td>+15</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-2</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-1</td><td>115</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>105</td></tr><tr><td>Er114ic</td><td>+10</td><td>70</td></tr><tr><td>Polekatt</td><td>+18</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>-8</td><td>125</td></tr><tr><td>Hammers1man</td><td>+2</td><td>90</td></tr><tr><td>Chris74Jones</td><td>+3</td><td>105</td></tr><tr><td>BIGavoLEO</td><td>+20</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S6 W1: A Censored Golf Club (9 Apr - 15 Apr 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Horusphoenix</td><td>-1</td><td>100</td></tr><tr><td>Colly45x</td><td>+1</td><td>90</td></tr><tr><td>Mr Longpole</td><td>+3</td><td>105</td></tr><tr><td>Tenbobnote</td><td>+8</td><td>95</td></tr><tr><td>Geordieboy85</td><td>+17</td><td>60</td></tr><tr><td>NoWorries</td><td>+33</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Er114ic</td><td>+1</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+5</td><td>115</td></tr><tr><td>Keep_of_Kalessin</td><td>+6</td><td>80</td></tr><tr><td>Polekatt</td><td>+28</td><td>95</td></tr><tr><td>IceCream</td><td>+35</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Rendallio</td><td>+2</td><td>125</td></tr><tr><td>Hammers1man</td><td>+12</td><td>115</td></tr><tr><td>BIGavoLEO</td><td>+76</td><td>80</td></tr></table></div>",
+  "lastFinalizedWeek": 4
 }
